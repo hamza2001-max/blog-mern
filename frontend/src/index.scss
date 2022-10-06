@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'League Spartan', 'open-sans';
+  
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid black;
+  padding: 20px 30px 20px 30px;
+
+  .navbar-links {
+    display: flex;
+
+    a {
+      text-decoration: none;
+      padding-left: 20px;
+      color: black;
+    }
+  }
+
+  .toggle-btn-container {
+    display: none;
+  }
+
+  @media (max-width: 812px) {
+    .navbar-links {
+      display: none;
+    }
+
+    .toggle-btn-container {
+      display: block;
+      text-align: right;
+      
+      .toggle-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 2;
+        font-size: 2rem;
+        transition: transform 250ms ease-in-out;
+        cursor: pointer;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      
+      .toggle-btn-links {
+        position: fixed;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        padding-top: 100px;
+        background-color: rgb(178, 74, 74);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 50vw;
+
+        h2 {
+          margin-top: 30px;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.blogBlock-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 0px 30px;
+  
+  @media(min-width: 812px){
+    align-items: center;
+    flex-direction: row;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .blogBlock {
+    min-width: 400px;
+    position: relative;
+    border-radius: 7px;
+    padding: 15px 10px;
+    box-shadow: 0 0 5px rgb(180, 180, 180);
+    margin-top: 30px;
+    margin-right: 80px;
+    transition: transform 250ms ease-in-out;
+    cursor: pointer;
+
+    @media(max-width: 812px){
+      min-width: 300px;
+    }
+    
+    .title {
+      max-width: 380px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      font-weight: 400;
+      max-width: 380px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .timeStamp {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: rgb(129, 129, 129);
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .deleteBtn {
+      background-color: #fff;
+      border: 1.5px solid black;
+      border-radius: 3px;
+      padding: 2px 5px;
+      font-size: 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+}
+
+.about-container {
+  margin-top: 80px;
+
+  .about {
+    font-size: 1.6rem;
+    max-width: 1400px;
+  }
+}
+
+.form-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    box-shadow: 0 0 5px rgb(180, 180, 180);
+    padding: 20px 20px 0px 20px;
+    border-radius: 7px;
+
+    .input-block {
+      margin-bottom: 14px;
+
+      input {
+        font-size: 1.7rem;
+        padding: 7px 0 7px 0;
+        outline: none;
+      }
+
+      textarea {
+        outline: none;
+        font-size: 1.7rem;
+        resize: none;
+      }
+
+      .empty-field {
+        padding: 7px 0 7px 0;
+        border-radius: 3px;
+        background-color: rgb(244, 185, 185);
+        border: 1.5px solid rgb(199, 99, 99);
+      }
+    }
+
+    button {
+      margin-bottom: 15px;
+      background-color: rgb(90, 167, 255);
+      font-size: 1.7rem;
+      cursor: pointer;
+      padding: 10px 13px 10px 13px;
+      color: #fff;
+      border-radius: 4px;
+      border: none;
+    }
+  }
+}
